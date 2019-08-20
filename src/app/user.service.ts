@@ -23,17 +23,33 @@ export class UserService {
     constructor(private http: HttpClient) {}
 
     public getDataFromRandomAPI() {
-        return this.http.get<User>(this.apiUrl);
+        return this.http.get(this.apiUrl);
+    }
+
+    public fetchDataFromRandomAPI() {
+        return this.http.get(this.apiUrl).pipe(map(
+            (responseData: {[key: string]: User }) => {
+                const dataArray: User[] = [];
+                for (const key in responseData) {
+                    if (responseData.hasOwnProperty(key)) {
+                        dataArray.push({ ...responseData[key]})
+                    }  
+                }
+                return dataArray;
+            }
+        )).subscribe( apiData => {
+            console.log(apiData[0][0].gender);
+        })
     }
 
 
-    getPosts(): Observable<User[]> {
-        return this.http
-            .get(this.apiUrl)
-            .map((response: Response) => {
-                return <User[]>response.json();
-            })
-            .catch(this.handleError);
-    }
+    // getPosts(): Observable<User[]> {
+    //     return this.http
+    //         .get(this.apiUrl)
+    //         .map((response: Response) => {
+    //             return <User[]>response.json();
+    //         })
+    //         .catch(this.handleError);
+    // }
     
 }
