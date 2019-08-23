@@ -9,31 +9,81 @@ import { UserService } from '../user.service';
 })
 export class UserDetailsComponent implements OnInit {
   userDetails: User;
-  userDetailsContent: String = "move mouse over the icons";
+  userDetailsIntro: String = "to change the values";
+  userDetailsContentFromApi: String = "move mouse over the icons";
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.getSpecificDataFromAPI();
   }
 
-  onMouseIn() {
-    this.userDetailsContent = "this is going to contain stuff";
-  }
+  onMouseIn(userPropertyName) {
+    switch (userPropertyName) {
 
-  ngMouseIn(propertyName) {
-    switch (propertyName) {
       case "name":
-        this.userDetailsContent = this.userDetails.name.first;
+
+        let titleOfUser: String = this.userDetails.name.title;
+        let upperCaseFirstLetterOfTitle: String = titleOfUser.charAt(0).toUpperCase() + titleOfUser.slice(1);
+
+        let firstName: String = this.userDetails.name.first;
+        let lastName: String = this.userDetails.name.last;
+
+        this.userDetailsIntro = "Hi, My name is"
+        this.userDetailsContentFromApi =  upperCaseFirstLetterOfTitle + ". " + firstName + " " + lastName;
         break;
-      
-        case "email":
-          this.userDetailsContent = this.userDetails.email;
-          break;  
+
+      case "email":
+          this.userDetailsIntro = "My email address is"
+          this.userDetailsContentFromApi = this.userDetails.email;
+        break;  
+
+      case "calendar":
+
+          let dateFromJSON = new Date(this.userDetails.dob.date);
+          let dateAfterFormat = dateFromJSON.getDate() + "/" + (dateFromJSON.getMonth() + 1) + "/" + dateFromJSON.getFullYear();
+            console.log(dateAfterFormat);
+
+
+          this.userDetailsIntro = "My birthday is"
+          this.userDetailsContentFromApi = dateAfterFormat;
+        break;  
+       
+      case "location":
+        let address = this.userDetails.location.postcode + " - " + this.userDetails.location.street;
+          this.userDetailsIntro = "My address is"
+          this.userDetailsContentFromApi = address;
+       break;
+       
+      case "call":
+          this.userDetailsIntro = "My phone number is"
+          this.userDetailsContentFromApi = this.userDetails.phone;
+      break; 
+
+      case "locked":
+          this.userDetailsIntro = "My password is"
+          this.userDetailsContentFromApi = this.userDetails.login.password;
+      break;
     
       default:
         break;
     }
+    
   }
+
+  // ngMouseIn(propertyName) {
+  //   switch (propertyName) {
+  //     case "name":
+  //       this.userDetailsContent = this.userDetails.name.first;
+  //       break;
+      
+  //       case "email":
+  //         this.userDetailsContent = this.userDetails.email;
+  //         break;  
+    
+  //     default:
+  //       break;
+  //   }
+  // }
 
   getSpecificDataFromAPI() {
     return this.userService.getDataFromRandomAPI()
