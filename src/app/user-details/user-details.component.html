@@ -4,10 +4,15 @@
   </div>
 </div>
 
-
+<!-- 
 <div *ngFor='let userdetail of randomUserDetailsArray'>
     <h3 class="c-card__subtitle u-margin--none">{{ userdetail.gender }}</h3>
-    <h2 class="c-card__title u-text--lg">{{ userDetailsArray}}</h2>
+    <h2 class="c-card__title u-text--lg" [innerText]="makeAFunction">{{ userdetail.email}}</h2>
+  </div> -->
+
+  <div>
+    <h3 class="c-card__subtitle u-margin--none">{{ userDetailsContent }}</h3>
+    <!-- <h2 class="c-card__title u-text--lg" >{{ userdetail.email}}</h2> -->
   </div>
   
 <ul class="c-tabs l-row u-grid-justify--center u-padding--md">
@@ -16,12 +21,12 @@
       <img class="u-image--24" src="./assets/icons/svg/misc/user.svg" alt="">
     </a>
   </li>
-  <li (mouseenter) ="ngMouseIn('email') " class="c-tabs__list">
+  <li class="c-tabs__list" (mouseenter) ="ngMouseIn('email')" >
     <a class="c-tabs__link u-padding--sm">
       <img class="u-image--24" src="./assets/icons/svg/misc/email.svg" alt="">
     </a>
   </li>
-  <li (mouseenter) ="ngMouseIn('calendar') "class="c-tabs__list">
+  <li (mouseenter) ="ngMouseIn('name') "class="c-tabs__list">
     <a class="c-tabs__link u-padding--sm">
       <img class="u-image--24" src="./assets/icons/svg/misc/calendar.svg" alt="">
     </a>
