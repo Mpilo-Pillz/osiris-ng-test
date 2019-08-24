@@ -4,6 +4,7 @@ import {
 import {
   Injectable
 } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  public getDataFromRandomAPI() {
+  public getDataFromRandomAPI(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
 }

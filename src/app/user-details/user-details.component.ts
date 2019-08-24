@@ -11,6 +11,7 @@ export class UserDetailsComponent implements OnInit {
   userDetails: User;
   userDetailsIntro: string = 'to change the values';
   userDetailsContentFromApi: string = 'move mouse over the icons';
+  connectionToApi = false;
 
   constructor(private userService: UserService) {}
 
@@ -21,7 +22,14 @@ export class UserDetailsComponent implements OnInit {
   getSpecificDataFromAPI() {
     return this.userService.getDataFromRandomAPI()
       .subscribe(apiData => {
+        this.connectionToApi = true;
         this.userDetails = apiData['results'][0];
+      },
+      err => {
+        console.log('could not fetch data from the url');
+        this.connectionToApi = false;
+        this.userDetailsIntro  = 'Connection Failed!!!';
+        this.userDetailsContentFromApi = 'Data could not be fetched!';
       });
   }
 
@@ -37,7 +45,7 @@ export class UserDetailsComponent implements OnInit {
         const firstName: string = this.userDetails.name.first;
         const lastName: string = this.userDetails.name.last;
 
-        this.userDetailsIntro = 'Hi, My name is'
+        this.userDetailsIntro = 'Hi, My name is';
         this.userDetailsContentFromApi =  upperCaseFirstLetterOfTitle + '. ' + firstName + ' ' + lastName;
         break;
 
@@ -53,7 +61,7 @@ export class UserDetailsComponent implements OnInit {
           console.log(dateAfterFormat);
 
 
-          this.userDetailsIntro = 'My birthday is'
+          this.userDetailsIntro = 'My birthday is';
           this.userDetailsContentFromApi = dateAfterFormat;
           break;
 
@@ -64,12 +72,12 @@ export class UserDetailsComponent implements OnInit {
         break;
 
       case 'call':
-          this.userDetailsIntro = 'My phone number is'
+          this.userDetailsIntro = 'My phone number is';
           this.userDetailsContentFromApi = this.userDetails.phone;
           break;
 
       case 'locked':
-          this.userDetailsIntro = 'My password is'
+          this.userDetailsIntro = 'My password is';
           this.userDetailsContentFromApi = this.userDetails.login.password;
           break;
 
