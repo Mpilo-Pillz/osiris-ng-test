@@ -21,7 +21,9 @@ export interface User {
     login: {
                 password: string;
             };
-            
-    picture: string;
+
+    picture: {
+         medium: string
+         large: string
+    };
   }
-  
