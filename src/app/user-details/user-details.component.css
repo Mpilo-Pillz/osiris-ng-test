@@ -1,20 +1,18 @@
 .notconnected {
-    color: #DA3A00;
+  color: #DA3A00;
 }
 
-.u-image-custom{
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, .5);
-    border: 1px solid #D5D5D5;
-    padding: 4px;
-    height: 160px;
-    width: 160px;
-    
+.u-image-custom {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, .5);
+  border: 1px solid #D5D5D5;
+  padding: 4px;
+  height: 160px;
+  width: 160px;
+
 }
 
-#c-card__margin-custom{
-    margin-bottom: 80px;
-    background-color: #F9F9F9;
-    height: 120px;
+#c-card__margin-custom {
+  margin-bottom: 80px;
+  background-color: #F9F9F9;
+  height: 120px;
 }
-
-

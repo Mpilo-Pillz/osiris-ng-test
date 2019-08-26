@@ -4,7 +4,9 @@ import {
 import {
   Injectable
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import {
+  Observable
+} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  public getDataFromRandomAPI(): Observable<any> {
+  public getDataFromRandomAPI(): Observable < any > {
     return this.http.get(this.apiUrl);
   }
 }
