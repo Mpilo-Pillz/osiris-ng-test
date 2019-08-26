@@ -1,3 +1,11 @@
 .notconnected {
-    color: red;
+    color: #DA3A00;
+}
+
+.u-image-custom{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, .5);
+}
+
+#c-card__margin-custom{
+    margin-bottom: 80px;
 }

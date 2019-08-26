@@ -1467,7 +1467,7 @@ h6 {
 .c-card__header {
     padding: .75rem;
     height: 80px;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 
 .c-card__title {
