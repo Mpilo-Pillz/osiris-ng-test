@@ -1,8 +1,8 @@
 .u-card-custom {
-  position: absolute;
-  left: 30%;
-  width: 40%;
-  height: 40%;
+  /* position: absolute; */
+  margin: auto;
+  width: 500px;
+  padding: 10px;
   top: 300px;
   border-radius: 1%;
   box-shadow: 1px 4px 10px rgba(0, 0, 0, .3);
@@ -19,7 +19,9 @@
 
 @media screen and (max-width: 600px) {
   .u-card-custom {
-    width: 90%;
+     /* margin: auto; */
+      width: 100%;
+    padding: 10px;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, .3);
     margin-left: -90px;
 
