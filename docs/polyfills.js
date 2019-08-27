@@ -5788,8 +5788,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Tenacity\Documents\Projects\dla-mini-studio-web-projects\osiris-ng-test\src\polyfills.ts */"./src/polyfills.ts");
-module.exports = __webpack_require__(/*! C:\Users\Tenacity\Documents\Projects\dla-mini-studio-web-projects\osiris-ng-test\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+__webpack_require__(/*! C:\Users\QA\Documents\Learning\OsirisFrontEndTest\OsirisFrontEndAngularTest\mpilo-ng-frontend-test\mpilo-ng-frontend\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\QA\Documents\Learning\OsirisFrontEndTest\OsirisFrontEndAngularTest\mpilo-ng-frontend-test\mpilo-ng-frontend\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
 
 
 /***/ })

@@ -16,7 +16,7 @@
 </div>
 
 <ul class="c-tabs l-row u-grid-justify--center u-padding--md" [hidden]="!connectionToApi">
-
+  <!-- <ul class="c-tabs l-row u-grid-justify--center u-padding--md" [ngClass]="{'removebuttonsbecuasenotconnected': !connectionToApi}"> -->
   <li class="c-tabs__list" (mouseenter)="onMouseIn('name')">
     <a class="c-tabs__link u-padding--sm">
       <input type="image" class="u-image--24" src="./assets/icons/svg/misc/user.svg">

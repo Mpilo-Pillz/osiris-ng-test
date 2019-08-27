@@ -1,17 +1,16 @@
 .u-card-custom {
-  /* position: absolute; */
+  position: relative;
   margin: auto;
-  width: 500px;
-  padding: 10px;
-  top: 300px;
+  width: 750px;
+  height: 400px;
+  top: 350px;
   border-radius: 1%;
   box-shadow: 1px 4px 10px rgba(0, 0, 0, .3);
 }
 
 .u-container-custom {
-  margin: 0px 0px 0px 0px;
-  height: 50%;
-  padding: 150px 150px 150px 150px;
+  margin: 0px;
+  height: 550px;
   background-color: #2C2E31;
 }
 
@@ -19,17 +18,17 @@
 
 @media screen and (max-width: 600px) {
   .u-card-custom {
-     /* margin: auto; */
-      width: 100%;
-    padding: 10px;
+    position: relative;
+    margin: auto;
+    width: 300px;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, .3);
-    margin-left: -90px;
 
   }
 
   .u-container-custom {
-    margin: 0px 0px 0px 0px;
-    height: 50%;
+    margin: 0px;
+    height: 300px;
+    width: 100%;
     background-color: #2C2E31;
   }
 

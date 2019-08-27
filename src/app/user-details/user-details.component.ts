@@ -41,7 +41,9 @@ export class UserDetailsComponent implements OnInit {
   }
 
   onMouseIn(userPropertyName) {
-
+    if (!this.connectionToApi){
+      return;
+    }
     switch (userPropertyName) {
 
       case 'name':
